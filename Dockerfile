@@ -9,4 +9,4 @@ RUN apt-get install -y oracle-java8-installer curl jq python python-pip gradle
 #RUN curl https://services.gradle.org/distributions/gradle-4.5.1-bin.zip --output gradle.zip ; unzip -d . ./gradle.zip
 RUN gradle -v
 RUN pip install awscli
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl; chmod +x ./kubectl; mv ./kubectl /usr/local/bin/kubectl
+RUN curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.9.2/0.1/kubectl; chmod +x ./kubectl; mv ./kubectl /usr/local/bin/kubectl
